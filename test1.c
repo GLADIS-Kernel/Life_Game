@@ -10,3 +10,9 @@
 void hello(){
     sprintf("hello world")
 }
+
+struct cell {
+    bool status;
+    int pos_x;
+    int pos_y;
+}
