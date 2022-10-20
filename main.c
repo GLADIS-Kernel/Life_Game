@@ -21,8 +21,6 @@ int main(int argc, const char * argv[]) {
     int pos_x;
     int pos_y; } cell;
     
-    int width = 4;
-    int height = 4;
     
     int fsize = 4;
     
@@ -40,21 +38,21 @@ int main(int argc, const char * argv[]) {
     printw("My coordinates for cell at 0,0 are: %d,%d\n",field [0][0]. pos_x , field [0][0]. pos_y );*/
     
 
-    /*printw("Hello World !!!\n");     Print Hello World
-    int d = hello();
-    printw("x equals %i",d);*/
+
     
     //INIT CELL Matrix
-    int x = 0;
-    while (x<50){
-        for (int i = 0; i<fsize; ++i){
-            for (int j = 0; j<fsize; ++i){
-                field[i][j].pos_x=i;
-                field[i][j].pos_y=j;
-                field[i][j].alive=0;
-            }
+    /*for (int i = 0; i<fsize; ++i){
+        for (int j = 0; j<fsize; ++i){
+            field[i][j].pos_x=i;
+            field[i][j].pos_y=j;
+            field[i][j].alive=0;
         }
-    }
+    }*/
+    
+    printw("Hello World !!!\n");
+    int d = hello();
+    printw("x equals %i",d);
+    
     refresh();            /* Print it on to the real screen */
     getch();            /* Wait for user input */
     
