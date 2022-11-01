@@ -22,7 +22,7 @@ int main(int argc, const char * argv[]) {
     int pos_y; } cell;
     
     
-    int fsize = 4;
+    int fsize = 20;
     
     cell ** field = (cell **) malloc(fsize * sizeof(cell *));
     
@@ -43,13 +43,14 @@ int main(int argc, const char * argv[]) {
     //INIT CELL Matrix
     /*for (int i = 0; i<fsize; ++i){
         for (int j = 0; j<fsize; ++i){
-            field[i][j].pos_x=i;
-            field[i][j].pos_y=j;
+            field[i][j].pos_x=1;
+            field[i][j].pos_y=1;
             field[i][j].alive=0;
         }
     }*/
     
     printw("Hello World !!!\n");
+    addch(ACS_CKBOARD);
     int d = hello();
     printw("x equals %i",d);
     
