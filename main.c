@@ -77,7 +77,7 @@ void
 
 UI(void)        //user interface
 {
-    int i, j, c= 0;
+    int i, j;
     for(i=0;i<size;++i){
         for(j=0;j<(size*3);++j){
             attron(m[i][j] ? COLOR_PAIR(2) : COLOR_PAIR(3));
