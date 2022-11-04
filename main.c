@@ -73,6 +73,8 @@ init(void)
 
 
 void
+
+
 UI(void)        //user interface
 {
     int i, j, c= 0;
@@ -95,8 +97,7 @@ UI(void)        //user interface
 }
 
 
-void
-neighbours(void)
+void neighbours(void)
 {
     if(pau)
         return;
@@ -153,14 +154,14 @@ neighbours(void)
               free(new_m);               \
               new_m = NULL;              \
          } while(/* CONSTCOND */ 0);
+    
     usleep(1000000);        //delay 1s
 }
 
 
 
 
-void
-keyboard(void)
+void keyboard(void)
 {
     int i, j, c;
 
@@ -224,8 +225,7 @@ keyboard(void)
 }
 
 
-void
-text(void)
+void text(void)
 {
 
     //window
@@ -242,14 +242,12 @@ text(void)
     //info for current position
     wprintw(wui, "Pos: [%.4dx%.4d] (%s)", px, py, ((m[py][px]) ? "Live" : "Dead"));
     //Key info
-    wprintw(wui, "        Keys->  P: Pause/Run    Space: Live/Dead    C: Clear    Q: Quit        Arrows: Up/Down/Left/Right");
+    wprintw(wui, "  Keys->  P: Pause/Run    Space: Live/Dead    C: Clear    Q: Quit Navigate:Arrows");
+    //step and population
+    wprintw(wui, "  Step: %i  Population: %i",step,population);
     
 
     wattroff(wui, COLOR_PAIR(0));
-
-/*////////////////////////////
-AÑADIR UNA LINEA DEBAJO QUE PONGA EL STEP Y LA POPULATION
-////////////////////////////*/
 
 
     wrefresh(wui);
@@ -266,10 +264,11 @@ int main()
     init();
     
     while(running){
-    neighbours();
-    keyboard();
-    UI();
-    text();
+        
+        neighbours();
+        keyboard();
+        UI();
+        text();
     }
     
     endwin();
