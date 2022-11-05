@@ -208,6 +208,8 @@ void keyboard(void)
             for(j = 0; j < (size); ++j)
                        m[i][j] = 0;
               pau = 1;
+              step=0;
+              population=0;
         break;
 
      /* Reverse selected cells state */
@@ -244,7 +246,7 @@ void text(void)
     //Key info
     wprintw(wui, "  Keys->  P: Pause/Run    Space: Live/Dead    C: Clear    Q: Quit Navigate:Arrows");
     //step and population
-    wprintw(wui, "  Step: %i  Population: %i",step,population);
+    wprintw(wui, "     Step: %i  Population: %i",step,population);
     
 
     wattroff(wui, COLOR_PAIR(0));
