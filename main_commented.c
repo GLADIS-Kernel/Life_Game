@@ -8,6 +8,15 @@ CODER2: GLADIS-Kernel
 CODER3: MCV1958
 ////////////////////////////////*/
 
+/*////////////////////////////////
+ TEAMWORK STRATEGY:
+Work to be done divided in equal parts for each coder:
+two coders (1 & 3) did the user interface of the game
+which was the most complex part of the algorithm
+(window, screen print, keyboard events, etc.) and the
+last coder (coder 2) applied the logic of the Game of Life.
+////////////////////////////////*/
+
 /* INCLUDE LIBRARIES */
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,7 +37,7 @@ long population=0;          //  Cell population counter
 long step=0;                //  Steps counter (Generations counter)
 /* //////////////////////////// */
 
-/* GAME INITIALIZATION & SETUP  */
+/* GAME INITIALIZATION & SETUP (CODER 1) */
 void init(void) {
     /*   ncurses.h setup    */
     initscr();              // Initialize ncurses.h
@@ -70,7 +79,7 @@ void init(void) {
 }
 /*////////////////////////////  */
 
-/* USER INTERFACE (CELLS) */
+/* USER INTERFACE (CELLS) (CODER 1) */
 void UI(void){
     int i, j;                                                   // Declaration of counters i and j
     for(i=0;i<size;++i){
@@ -88,7 +97,7 @@ void UI(void){
 }
 /* ////////////////////// */
 
-/* GAME OF LIFE LOGIC */
+/* GAME OF LIFE LOGIC (CODER 2) */
 void neighbours(void) {
     if(pau) return;         // If the game is paused, return
     int i,j,n=0;            // Declaration of variables (i and j are counters, n is the number of neighbours)
@@ -141,7 +150,7 @@ void neighbours(void) {
 }
 /* ////////////////// */
 
-/* SETUP OF THE KEYBOARD EVENTS */
+/* SETUP OF THE KEYBOARD EVENTS (CODER 3)*/
 void keyboard(void){
     int i, j, c;            // Declaration of variables (i and j are counters, c is the pressed key)
     switch((c = getch()))   // Waits the user interaction with the keyboard and gets the key
@@ -197,7 +206,7 @@ void keyboard(void){
 }
 /* //////////////////////////// */
 
-/* USER INTERFACE (TEXT) */
+/* USER INTERFACE (TEXT) (CODER 3)*/
 void text(void){
 
     wrefresh(wui);                      // Update the window
@@ -222,7 +231,7 @@ void text(void){
 }
 /* ///////////////////// */
 
-/* MAIN ALGORITHM BLOCK */
+/* MAIN ALGORITHM BLOCK (CODER 1 + CODER 2 + CODER 3) */
 int main() {
     init();                 // Initialization and setup of the algorithm
     while(running){
